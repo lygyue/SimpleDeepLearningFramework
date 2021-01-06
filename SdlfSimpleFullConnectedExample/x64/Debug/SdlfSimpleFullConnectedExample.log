@@ -1,0 +1,4 @@
+﻿  SdlfSimpleFullConnectedExample.cpp
+e:\work\simpledeeplearningframework\sdlfsimplefullconnectedexample\sdlfsimplefullconnectedexample.cpp(81): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  SdlfSimpleFullConnectedExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SdlfSimpleFullConnectedExample.exe
+  SdlfSimpleFullConnectedExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SdlfSimpleFullConnectedExample.pdb (Full PDB)

@@ -1,0 +1,12 @@
+﻿  SdlfModel.cpp
+e:\work\simpledeeplearningframework\simpledeeplearningframework\sdlfmodel.cpp(121): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+  SdlfLayer.cpp
+  正在生成代码...
+  正在编译...
+  SdlfCalculatorCPU.cpp
+  SdlfCalculator.cpp
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  SdlfFunction.cpp
+  SimpleDeepLearningFramework.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SimpleDeepLearningFramework.dll
+  SimpleDeepLearningFramework.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SimpleDeepLearningFramework.pdb (Full PDB)

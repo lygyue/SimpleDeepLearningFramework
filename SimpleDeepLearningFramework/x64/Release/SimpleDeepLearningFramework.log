@@ -1,0 +1,14 @@
+﻿  SdlfCalculator.cpp
+  SdlfCalculatorCPU.cpp
+  SdlfFunction.cpp
+  SdlfLayer.cpp
+  SdlfModel.cpp
+SdlfModel.cpp(122): warning C4244: “+=”: 从“double”转换到“float”，可能丢失数据
+    正在创建库 E:\Work\SimpleDeepLearningFramework\x64\Release\SimpleDeepLearningFramework.lib 和对象 E:\Work\SimpleDeepLearningFramework\x64\Release\SimpleDeepLearningFramework.exp
+  正在生成代码
+  29 of 226 functions (12.8%) were compiled, the rest were copied from previous compilation.
+    5 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  SimpleDeepLearningFramework.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Release\SimpleDeepLearningFramework.dll
+  SimpleDeepLearningFramework.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Release\SimpleDeepLearningFramework.pdb (Full PDB)

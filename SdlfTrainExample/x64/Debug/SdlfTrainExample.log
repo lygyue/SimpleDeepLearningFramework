@@ -1,0 +1,4 @@
+﻿  SdlfTrainExample.cpp
+e:\work\simpledeeplearningframework\sdlftrainexample\sdlftrainexample.cpp(137): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  SdlfTrainExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SdlfTrainExample.exe
+  SdlfTrainExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Debug\SdlfTrainExample.pdb (Full PDB)

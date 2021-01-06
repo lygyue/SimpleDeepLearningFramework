@@ -1,0 +1,9 @@
+﻿  SdlfSimpleFullConnectedExample.cpp
+SdlfSimpleFullConnectedExample.cpp(83): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码
+  3 of 214 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  SdlfSimpleFullConnectedExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Release\SdlfSimpleFullConnectedExample.exe
+  SdlfSimpleFullConnectedExample.vcxproj -> E:\Work\SimpleDeepLearningFramework\x64\Release\SdlfSimpleFullConnectedExample.pdb (Full PDB)
