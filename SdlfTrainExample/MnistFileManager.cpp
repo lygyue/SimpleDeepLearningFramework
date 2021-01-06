@@ -172,7 +172,7 @@ void MnistFileManager::GetImageAndLabelDataInRandom(int BatchCount, unsigned cha
 	const int ImageSize = 28 * 28;
 
 	ImageData = mImageTrainData + Index * ImageSize;
-	LabelData = mImageTrainLabelData + Index;
+	LabelData = mImageTrainLabelData + Index * 10;
 }
 
 void MnistFileManager::GetImageAndLabelDataByIndex(int Index, unsigned char*& ImageData, unsigned char*& LabelData)
@@ -181,7 +181,7 @@ void MnistFileManager::GetImageAndLabelDataByIndex(int Index, unsigned char*& Im
 	const int ImageSize = 28 * 28;
 
 	ImageData = mImageTrainData + Index * ImageSize;
-	LabelData = mImageTrainLabelData + Index;
+	LabelData = mImageTrainLabelData + Index * 10;
 }
 
 void MnistFileManager::GetTestImageAndLabelDataByIndex(int Index, unsigned char*& ImageData, unsigned char*& LabelData)
@@ -190,7 +190,7 @@ void MnistFileManager::GetTestImageAndLabelDataByIndex(int Index, unsigned char*
 	const int ImageSize = 28 * 28;
 
 	ImageData = mImageTestData + Index * ImageSize;
-	LabelData = mImageTestLabelData + Index;
+	LabelData = mImageTestLabelData + Index * 10;
 }
 
 int MnistFileManager::GetTrainDataCount() const
