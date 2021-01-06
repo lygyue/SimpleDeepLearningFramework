@@ -47,10 +47,11 @@ public:
 	void ReleaseTestData();
 	// 随机获取，用于训练
 	void GetImageAndLabelDataInRandom(int BatchCount, unsigned char*& ImageData, unsigned char*& LabelData);
+	void GetImageAndLabelDataByIndex(int Index, unsigned char*& ImageData, unsigned char*& LabelData);
 	// 随机获取感觉可能会导致训练波动？例如运气不大好，一直随机到差不多的位置，然后会导致loss快速下降，然后随机到了其他地方，loss会上涨？猜的
 	// 所以，这里增加一个顺序训练
 	// 顺序获取，用于训练或者测试，这里不需要传入batch的原因在于，获取到的是一大块内存的指针，你后续要读取多少就读取多少batch，不会有什么影响。除非index到头了才会导致越界
-	void GetImageAndLabelDataByIndex(int Index, unsigned char*& ImageData, unsigned char*& LabelData);
+	void GetTestImageAndLabelDataByIndex(int Index, unsigned char*& ImageData, unsigned char*& LabelData);
 
 	int GetTrainDataCount() const;
 	int GetTestDataCount() const;
