@@ -50,9 +50,9 @@ public:
 	// 返回分类输出结果，可以逆向求导或者是计算准确率
 	float* Excute(SdlfCalculator* Calculator);
 	// 反向求导
-	void SoftMaxGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
-	void FullLinkGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
-	void Conv2DGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
+	void SoftMaxBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
+	void FullLinkBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
+	void Conv2DBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator);
 
 	void UpdateStep(float Multi);
 protected:

@@ -132,7 +132,7 @@ void SdlfModelImpl::StartTrainSession(unsigned char* ImageData, unsigned char* C
 					Errors += 1.0f;
 				}
 			}
-			mLastLayer->SoftMaxGradient(Classify, mBatchCount, mCalculator);
+			mLastLayer->SoftMaxBackward_Propagation(Classify, mBatchCount, mCalculator);
 			SAFE_DELETE_ARRAY(Classify);
 			char Msg[256] = { 0 };
 			Errors /= float(mBatchCount);

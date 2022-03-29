@@ -149,7 +149,7 @@ bool MnistFileManager::LoadTestDataToMemory()
 	fread_s(Temp, mTestDataCount, mTestDataCount, 1, fp);
 	fclose(fp);
 
-	TransformLabel(mImageTestLabelData, Temp, mTestDataCount);
+	TransformLabel(Temp, mImageTestLabelData, mTestDataCount);
 
 	SAFE_DELETE_ARRAY(Temp);
 

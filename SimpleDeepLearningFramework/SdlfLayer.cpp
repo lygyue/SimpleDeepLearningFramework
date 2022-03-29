@@ -239,7 +239,7 @@ float* SdlfLayerImpl::Excute(SdlfCalculator* Calculator)
 	return nullptr;
 }
 // 这个已知是一次分类10个，写死。所以GradientData的个数是10 * BatchCount
-void SdlfLayerImpl::SoftMaxGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
+void SdlfLayerImpl::SoftMaxBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
 {
 	// 先计算向前导数，再更新参数
 	float* Output = new float[BatchCount * mSoftMaxKernel->Row];
@@ -248,13 +248,13 @@ void SdlfLayerImpl::SoftMaxGradient(float* GradientData, int BatchCount, SdlfCal
 	// 更新参数
 	mSoftMaxKernel->UpdateParameter(GradientData, BatchCount, mStep);
 	// 往上传递
-	mPreLayer->FullLinkGradient(Output, BatchCount, Calculator);
+	mPreLayer->FullLinkBackward_Propagation(Output, BatchCount, Calculator);
 
 	SAFE_DELETE_ARRAY(Output);
 	return;
 }
 
-void SdlfLayerImpl::FullLinkGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
+void SdlfLayerImpl::FullLinkBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
 {
 	mFullLinkKernel->CalcFullLinkDropOutAndReluGradient(GradientData, BatchCount);
 
@@ -266,12 +266,12 @@ void SdlfLayerImpl::FullLinkGradient(float* GradientData, int BatchCount, SdlfCa
 	mFullLinkKernel->UpdateFullLinkParameter(GradientData, BatchCount, mStep);
 	// 继续向前卷积求导
 	if(mPreLayer)
-		mPreLayer->Conv2DGradient(OutData, BatchCount, Calculator);
+		mPreLayer->Conv2DBackward_Propagation(OutData, BatchCount, Calculator);
 
 	SAFE_DELETE_ARRAY(OutData);
 }
 
-void SdlfLayerImpl::Conv2DGradient(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
+void SdlfLayerImpl::Conv2DBackward_Propagation(float* GradientData, int BatchCount, SdlfCalculator* Calculator)
 {
 	// GradientData的长度是上次MaxPool的w * h * d * BatchCount
 	// 例如第一次卷积，是14 * 14 * 32 * BatchCount；第二次卷积是7 * 7 * 64 * BatchCount
@@ -292,7 +292,7 @@ void SdlfLayerImpl::Conv2DGradient(float* GradientData, int BatchCount, SdlfCalc
 		// 更新求导参数
 		mConvKernel->UpdateConv2DParameter(OutData, BatchCount, mStep);
 		// 继续向前执行
-		mPreLayer->Conv2DGradient(ConvGradientData, BatchCount, Calculator);
+		mPreLayer->Conv2DBackward_Propagation(ConvGradientData, BatchCount, Calculator);
 
 		SAFE_DELETE_ARRAY(ConvGradientData);
 	}
